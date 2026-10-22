@@ -157,4 +157,76 @@ BANK.hard.push(
   a:"The combined permissions from every assigned role",w:["Only the more restrictive role","Only the role from the first group","None until an admin picks one"]}
 );
 
+/* ---- Round 3, from Workato docs: platform quotas, jobs, recipe settings, data retention, workspace admin,
+        API security, Agent Studio and MCP ---- */
+BANK.easy.push(
+ {q:"What is the default recipe concurrency in Workato?", a:"1", w:["5","10","30"]},
+ {q:"What is the maximum recipe concurrency Workato allows by default, before you ask for an increase?", a:"30", w:["10","50","100"]},
+ {q:"How often can a Workato polling trigger check for new events at its fastest?", a:"Every five minutes", w:["Every second","Every 30 seconds","Every minute"]},
+ {q:"How does a real-time trigger usually learn about a new event?", a:"The app sends a webhook notification", w:["Workato polls the app every second","An admin uploads a file","The user refreshes the page"]},
+ {q:"What does a recipe create each time it processes a trigger event?", a:"A job", w:["A connection","A folder","A project"]},
+ {q:"Which of these is a Workato job status?", a:"Completed", w:["Succeeded","Archived","Cancelled"]},
+ {q:"What can you do with a failed job in the job history?", a:"Rerun it using the stored trigger event", w:["Only delete it","Turn it into a new recipe","Nothing, failed jobs are locked"]},
+ {q:"What is the default active job execution time limit?", a:"90 minutes", w:["5 minutes","30 minutes","24 hours"]},
+ {q:"Where do you find workspace settings such as session timeout and data retention?", a:"Workspace admin > Settings", w:["Recipe editor > Help","Community > Forum","Account > Billing"]},
+ {q:"Which sign-in option can be required for all users in Workato?", a:"Two-factor authentication", w:["Fingerprint login","Social media login","Anonymous guest access"]},
+ {q:"Which standard lets an identity provider automatically create and remove Workato users?", a:"SCIM 2.0", w:["FTP","SMTP","SNMP"]},
+ {q:"What does log streaming send to an external log provider?", a:"Job history and collaborator activity", w:["Customer invoices","Only recipe source code","Marketing email lists"]},
+ {q:"Which AI model options can Workato genies use?", a:"Anthropic Claude, OpenAI GPT or your own LLM", w:["Only one fixed built-in model","Only open-source models","Only models from a single cloud vendor"]},
+ {q:"What can a genie execute?", a:"Only the skills you add to it", w:["Any API in your workspace","Any recipe in any project","Any website on the internet"]},
+ {q:"What is a skill in Agent Studio?", a:"A workflow a genie can run, started by a Start workflow trigger", w:["A training badge for builders","A connector licence","A security certificate"]},
+ {q:"What does a knowledge base mainly give a genie?", a:"Semantic search over unstructured content", w:["Exact row counts from a database","Faster network speeds","Recipe scheduling"]},
+ {q:"Which data centers offer Workato genies?", a:"US, EU, AU, SG and JP", w:["Only the US data center","US and China only","Every data center without exception"]},
+ {q:"Which tool lets you expose Workato skills to external AI clients?", a:"An MCP server", w:["A lookup table","A scheduler","A data pipeline"]},
+ {q:"Which Workato feature stores structured rows that recipes can read and write?", a:"Data tables", w:["Genies","Environments","Network trace"]},
+ {q:"What is Network trace used for?", a:"Inspecting HTTP request and response data for recipe steps", w:["Tracking billing usage","Mapping the org chart","Tracking user logins"]},
+ {q:"Where do encryption keys come from by default in a Workato workspace?", a:"Workato manages them", w:["An AWS KMS key you must create first","Your own hardware security module","A key uploaded at sign-up"]},
+ {q:"Which Workato feature exposes recipes as REST endpoints?", a:"The API platform", w:["Lookup tables","Network trace","The community library"]}
+);
+BANK.medium.push(
+ {q:"Which version of a recipe does a job rerun use?", a:"The latest recipe version", w:["The version the job originally ran on","The first published version","The version approved by an admin"]},
+ {q:"How many custom columns can you add to a recipe's job report?", a:"Up to ten", w:["Up to three","Up to 50","Unlimited"]},
+ {q:"How many rows does a job report CSV export include?", a:"The latest 1,000 rows, based on current filters", w:["Every row ever stored","The latest 100 rows","50,000 rows"]},
+ {q:"When does the retention period for a recipe job start?", a:"When the job ends", w:["When the recipe is created","When the trigger event arrives","At midnight UTC each day"]},
+ {q:"Which recipe retention option keeps step data for troubleshooting but not the trigger event?", a:"Do not store trigger event only", w:["Default retention policy","Do not store any data","Store everything forever"]},
+ {q:"With the 'Do not store any data' retention option, what stays visible in the Jobs tab?", a:"Job ID, history and duration", w:["Step inputs and outputs","The trigger event payload","Full error messages for every job"]},
+ {q:"A retention setting is changed. Which data does the change apply to?", a:"Only data created after the change", w:["All existing data, deleted immediately","Only failed jobs","Only data from the last 24 hours"]},
+ {q:"What does Workato do with a pending job after the recipe has been stopped for thirty days?", a:"It fails the job", w:["Runs it automatically","Deletes the whole recipe","Moves it to the Test environment"]},
+ {q:"What does the Paused job status mean?", a:"The job has long actions and was paused when the recipe stopped", w:["The job failed with an error","The job is waiting for admin approval","The job finished with warnings"]},
+ {q:"What is the default job timeout for an API platform recipe?", a:"30 seconds", w:["90 minutes","5 minutes","1 hour"]},
+ {q:"How many data tables can a workspace have by default?", a:"100", w:["10","1,000","Unlimited"]},
+ {q:"What is the default maximum number of rows in a data table?", a:"1,000,000", w:["10,000","100,000","100 million"]},
+ {q:"How many columns can a lookup table have by default?", a:"10", w:["100","50","5"]},
+ {q:"How many rows can a lookup table hold by default?", a:"100,000", w:["1,000","10,000","1,000,000"]},
+ {q:"How many API keys can one API client have by default?", a:"20", w:["1","5","100"]},
+ {q:"Which authentication methods does the Workato API platform support?", a:"Auth tokens, OAuth 2.0, JWT, OpenID Connect and token introspection", w:["Only basic authentication","Only IP addresses","Only browser cookies"]},
+ {q:"What does mutual TLS validate on an API platform call?", a:"Both the access token and the client certificate", w:["Only the client certificate","Only the access token","Only the caller's IP address"]},
+ {q:"What do genie logs track?", a:"Skill executions and user interactions", w:["Only billing events","Only recipe edits","Only password changes"]},
+ {q:"What do MCP server logs record?", a:"User ID, request IP address, timestamp and the tools or APIs called", w:["Only the user's password","Only the model's temperature setting","Nothing, MCP calls are not logged"]},
+ {q:"How many documents does a knowledge base return for each query?", a:"The 10 most relevant", w:["3","50","100"]},
+ {q:"How are documents split inside a knowledge base?", a:"Into 8,000-character chunks with no overlap", w:["Into 500-character chunks with 50% overlap","Into one chunk per sentence","They are never split"]},
+ {q:"In Workspace admin > Settings, which section holds Encryption keys?", a:"Security", w:["Authentication","Workspace","Debug and logs"]}
+);
+BANK.hard.push(
+ {q:"What is the maximum job timeout you can set for an API platform recipe?", a:"240 seconds", w:["60 seconds","10 minutes","90 minutes"]},
+ {q:"What is the steady webhook rate Workato supports by default?", a:"20 events per second", w:["2 events per second","200 events per second","1,000 events per second"]},
+ {q:"How many recipes can share one webhook URL?", a:"100", w:["1","10","1,000"]},
+ {q:"What is the maximum number of steps in a recipe?", a:"1,000", w:["100","500","10,000"]},
+ {q:"How much job details data does Workato store across all steps before truncating?", a:"1 MB", w:["100 KB","10 MB","1 GB"]},
+ {q:"What is the maximum payload size for an API platform request?", a:"5 MB", w:["500 KB","50 MB","1 GB"]},
+ {q:"What is the limit for a single API platform request header?", a:"16 KB", w:["1 KB","64 KB","1 MB"]},
+ {q:"How long can an MCP tool call run?", a:"It returns inline within 30 seconds, then continues in the background up to 300 seconds in total", w:["It must finish within 5 seconds","It runs for exactly 60 seconds","It has no time limit at all"]},
+ {q:"How many active MCP tokens are allowed?", a:"Up to 50", w:["Up to 5","Up to 500","Unlimited"]},
+ {q:"How many entries can MCP Allowed IPs and Blocked IPs lists hold?", a:"Up to 500 each", w:["Up to 10 each","Up to 5,000 each","Only one entry each"]},
+ {q:"What is the maximum size of a skill's Return response?", a:"250 KB", w:["25 KB","2.5 MB","25 MB"]},
+ {q:"What does Verified User Authentication (VUA) require?", a:"Workato Identity with OAuth 2.0, and connected apps using the authorization code grant", w:["A shared service account password","Basic authentication on every app","Static API keys"]},
+ {q:"What happens to the MCP token when you switch from token-based authentication to Workato Identity?", a:"The MCP token is revoked", w:["It stays valid forever","It doubles its lifetime","It is copied to every user"]},
+ {q:"When can you change a genie's AI model?", a:"Only after you stop the genie", w:["At any time while it runs","Only at midnight UTC","Never, the model is fixed"]},
+ {q:"From which on-prem agent version are Windows Server 2012 R2 and newer supported?", a:"v2.8.0", w:["v1.0","v5.0","v23.0"]},
+ {q:"What is the minimum memory and disk for each on-prem agent?", a:"8 GB RAM and 768 MB disk", w:["1 GB RAM and 10 MB disk","16 GB RAM and 1 TB disk","512 MB RAM and 100 MB disk"]},
+ {q:"How often do real-time triggers typically poll in the background as a safety net?", a:"About once an hour", w:["Every second","Every five minutes","Once a month"]},
+ {q:"Which external secrets manager is supported besides AWS Secrets Manager, HashiCorp Vault and Azure Key Vault?", a:"CyberArk Conjur", w:["Google Keep","Apple Keychain","Bitwarden Send"]},
+ {q:"Does waiting or idle time count toward the active job execution time limit?", a:"No, only active execution counts", w:["Yes, all time counts","Only waiting on webhooks counts","Only time spent in Test environments counts"]}
+);
+
 const BANK_COUNTS = {easy:BANK.easy.length, medium:BANK.medium.length, hard:BANK.hard.length};
