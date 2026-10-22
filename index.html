@@ -48,7 +48,7 @@
     <p class="pre">Enterprise architecture</p>
     <h1>Control and execution plane quiz</h1>
     </div>
-    <p class="lead">How well do you know Workato's enterprise governance and runtime? Answer as many questions as you can in 60 seconds.</p>
+    <p class="lead">How well do you know Workato's enterprise governance and runtime? Answer as many questions as you can in 120 seconds.</p>
     <ul class="rules">
       <li>Multiple choice, four options, easy to hard</li>
       <li>Most correct answers wins. Ties go to the fastest player</li>
@@ -69,7 +69,7 @@
   <section class="card hidden" id="screen-game" aria-live="polite">
     <div class="topline">
       <span class="topleft"><img id="dewyMini" class="dewy dewymini" src="assets/dewy-point.png" alt=""><span><span id="qCount"></span> &nbsp;|&nbsp; <span id="scoreNow"></span></span></span>
-      <span class="timer" id="timer">60</span>
+      <span class="timer" id="timer">120</span>
     </div>
     <div class="bar"><div id="barFill"></div></div>
     <span class="badge" id="qTag"></span>
@@ -125,7 +125,7 @@
 <script src="questions.js"></script>
 <script src="rank.js"></script>
 <script>
-const GAME_SECONDS = 60;
+const GAME_SECONDS = 120;
 const POINTS = { easy: 10, medium: 20, hard: 30 };
 /* First seven questions always include two hard ones (positions 3 and 7); after that hard questions
    appear about once in eight. The sequence is built from the whole bank, so a fast player never runs out. */
